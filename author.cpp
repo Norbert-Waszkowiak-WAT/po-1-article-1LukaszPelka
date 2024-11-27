@@ -1,28 +1,21 @@
 #include <iostream>
-#include <string>
-using namespace std;
-#ifdef UNTITLED_AUTHOR
-#ifdef UNTITLED_AUTHOR
-class Author{
-    private:
-    string name;
-    string surname;
+#include "author.h"
 
-    public:
-    Author():
-    Author(string name, string surname)
-    :name(name), surname (surname){};
-    string getSurname{}{
-          return surname;
-    }
-    string getName{}{
-        return name;
-    }
-    string tosString{}{
-        return name + " " + surname;
-    }
-    void print{}{
-        cout<< name<<" "<<surname<<endl;
-    }
+Author::Author(const string& name, const string& surname)
+        : name(name), surname(surname) {}
 
-};
+void Author::print() {
+    std::cout << name << " " << surname << std::endl;
+}
+
+string Author::toString() const{
+    return name + " " + surname;;
+}
+
+const string &Author::getName() const {
+    return name;
+}
+
+const string &Author::getSurname() const {
+    return surname;
+}
